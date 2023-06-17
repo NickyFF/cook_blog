@@ -7,11 +7,14 @@ from . import models
 class RecipeInline(admin.StackedInline):
     model = models.Recipe
     extra = 1
+    
 
 
 class PostAdmin(admin.ModelAdmin):
     list_display = ["title", "author", "category", "create_at"]
     inlines = [RecipeInline]
+    save_as = True
+    save_on_top = True
 
 @admin.register(models.Recipe)
 class RecipeAdmin(admin.ModelAdmin):
