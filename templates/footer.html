@@ -1,4 +1,4 @@
-{% load static %}
+{% load static social_tags %}
 
 <footer class="footer">
   <div class="container-fluid">
@@ -46,7 +46,7 @@
             ut<br/> labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus
             commodo viverra<br/> maecenas accumsan lacus vel facilisis. </p>
           <div class="footer__social">
-              
+              {% get_social_links as social_links %}
               {% for item in social_links %}
                 <a href="{{ item.link }}"><img src="{{ item.icon.url }}"></a>
               {% endfor %}
